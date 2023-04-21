@@ -1,0 +1,48 @@
+.Account {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    background-color: #fff;
+    width: 80%;
+    margin: 0 auto;
+    flex-direction: row;
+    box-sizing: border-box;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    background-color: #fff;
+    width: 100%;
+    margin: 0 auto;
+    flex-direction: row;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.title, .statut {
+    font-size: 1rem;
+}
+
+.count {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.view {
+    display: block;
+    width: 200px;
+    padding: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    border-color: #00bc77;
+    background-color: #00bc77;
+    color: #fff;
+}
