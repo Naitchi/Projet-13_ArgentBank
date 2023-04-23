@@ -74,6 +74,7 @@ export default function User() {
             <div>
               <div>
                 <input
+                  className={styles.input}
                   placeholder={state.user.firstName}
                   onChange={(event) =>
                     setState({
@@ -83,6 +84,7 @@ export default function User() {
                   }
                 />
                 <input
+                  className={styles.input}
                   placeholder={state.user.lastName}
                   onChange={(event) =>
                     setState({
@@ -92,15 +94,23 @@ export default function User() {
                   }
                 />
               </div>
-              <button onClick={modifyUser}>Save</button>
-              <button onClick={changeEdit}>Cancel</button>
+              <button className={`${styles.edit} ${styles.save}`} onClick={modifyUser}>
+                Save
+              </button>
+              <button className={styles.edit} onClick={changeEdit}>
+                Cancel
+              </button>
             </div>
           )}
-          {state.user && !state.edit && <button className={styles.edit} onClick={changeEdit}>Edit Name</button>}
+          {state.user && !state.edit && (
+            <button className={styles.edit} onClick={changeEdit}>
+              Edit Name
+            </button>
+          )}
         </div>
-        <Account name="test" id="test" count="test" statut="test" />
-        <Account name="test" id="test" count="test" statut="test" />
-        <Account name="test" id="test" count="test" statut="test" />
+        <Account name="Checking" id="8349" count="2,082.79" statut="Available" />
+        <Account name="Savings" id="6712" count="10,928.42" statut="Available" />
+        <Account name="Credit Card" id="8349" count="184.30" statut="Current" />
       </div>
       <Footer />
     </div>

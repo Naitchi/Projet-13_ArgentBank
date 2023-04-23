@@ -46,3 +46,9 @@
     background-color: #00bc77;
     color: #fff;
 }
+
+@media (max-width: 622px) {
+    .box {
+        flex-direction: column;
+    }
+}

@@ -13,5 +13,8 @@
 .connect {
     margin-right: 0.5rem;
     font-weight: bold;
+}
 
+.icon {
+    margin-right: 5px;
 }
