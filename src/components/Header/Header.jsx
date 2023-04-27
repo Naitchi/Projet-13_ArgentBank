@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import React from 'react';
+import { useEffect } from 'react';
 
 // Store
 import { useDispatch, useSelector } from 'react-redux';
@@ -53,7 +54,7 @@ function Header() {
           Sign in
         </a>
       )}
-      {token && (
+      {token && user && (
         <div>
           <a href={profile} onClick={redirectProfile} className={styles.connect}>
             <i className={`fa fa-user-circle ${styles.icon}`}></i>

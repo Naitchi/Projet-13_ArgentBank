@@ -25,7 +25,7 @@ export default function Name() {
 
   const modifyUser = async () => {
     const response = await modifyProfile(state.newUser, token);
-    if (response === true)
+    if (response === true) {
       setState({
         ...state,
         edit: false,
@@ -35,6 +35,14 @@ export default function Name() {
           lastName: state.newUser.lastName,
         },
       });
+      dispatch(
+        setUser({
+          ...state.user,
+          firstName: state.newUser.firstName,
+          lastName: state.newUser.lastName,
+        }),
+      );
+    }
   };
 
   useEffect(() => {
