@@ -6,8 +6,8 @@ import { getProfile, modifyProfile } from '../../services/user.service';
 
 // Store
 import { useDispatch, useSelector } from 'react-redux';
-import { setToken } from '../../store/slices/authSlice';
-import { setUser } from '../../store/slices/userSlice';
+import { removeToken, setToken } from '../../store/slices/authSlice';
+import { removeUser, setUser } from '../../store/slices/userSlice';
 
 // Css
 import styles from './Name.module.css';
@@ -41,6 +41,12 @@ export default function Name() {
     const getUser = async () => {
       if (token) {
         const data = await getProfile(token);
+        if (!data) {
+          dispatch(removeUser());
+          dispatch(removeToken());
+          localStorage.removeItem('token');
+          router.push(login);
+        }
         setState({ ...state, user: data });
         dispatch(setUser(data));
       }
