@@ -14,13 +14,18 @@ environment running
 
 required : Node 16.11.0
 
+Start by :
+Launching the back-end on a diffrent machin with the readme and the project bellow :
+
+Back-end : https://github.com/OpenClassrooms-Student-Center/Project-10-Bank-API
+
 create a file .env in the root of the project and add the following lines
 
     API_URL = {url}
 
-You have to : 
+Once it's done you can just start the front with :
+
+You have to :
 
     npm install
     npm run dev
-
-backend : https://github.com/OpenClassrooms-Student-Center/Project-10-Bank-API
