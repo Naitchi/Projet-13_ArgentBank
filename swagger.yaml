@@ -110,8 +110,8 @@ paths:
           description: Invalid Fields
         '500':
           description: Internal Server Error
-  /transaction/:
-    post:
+  /transaction/lastMonth:
+    get:
       security:
         - Bearer: []
       tags:
@@ -123,6 +123,36 @@ paths:
           name: Authorization
           description: Attach Bearer JWT token
           required: true
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Transaction retrieved successully
+          schema:
+            $ref: '#/definitions/TransactionsApiResponse'
+        '404':
+          description: No Transactions retrieve with this user
+        '500':
+          description: Internal Server Error
+  /transaction/create:
+    post:
+      security:
+        - Bearer: []
+      tags:
+        - Transaction Module
+      summary: Transaction
+      description: API for post a transaction 
+      parameters:
+        - in: header
+          name: Authorization
+          description: Attach Bearer JWT token
+          required: true
+        - in: body
+          name: body
+          description: Signup Payload
+          required: true
+          schema:
+            $ref: '#/definitions/Transaction'
       produces:
         - application/json
       responses:
@@ -201,6 +231,36 @@ paths:
           description: Transaction not found 
         '500':
           description: Internal Server Error
+    delete:
+      security:
+        - Bearer: []
+      tags:
+        - Transaction Module
+      summary: Transaction API
+      description: API for delete Transaction
+      parameters:
+        - in: header
+          name: Authorization
+          description: Attach Bearer JWT token
+          required: true
+        - in: path
+          name: id
+          description: ID of transaction to return
+          required: true
+          schema:
+            type: integer
+            format: int64
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Transaction deleted successully
+          schema:
+            $ref: '#/definitions/ApiResponse'
+        '404':
+          description: Transaction not found 
+        '500':
+          description: Internal Server Error
 securityDefinitions:
   Bearer:
     type: apiKey
@@ -259,6 +319,15 @@ definitions:
         type: string
       body:
         type: object
+  TransactionsApiResponse:
+    type: object
+    properties:
+      status:
+        type: integer
+      message:
+        type: string
+      body:
+        type: array
   LoginResponse:
     type: object
     properties:
