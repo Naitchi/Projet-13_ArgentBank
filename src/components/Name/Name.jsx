@@ -45,7 +45,7 @@ export default function Name() {
           dispatch(removeUser());
           dispatch(removeToken());
           localStorage.removeItem('token');
-          router.push(login);
+          router.push('/login');
         }
         setState({ ...state, user: data });
         dispatch(setUser(data));
