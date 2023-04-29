@@ -129,7 +129,7 @@ paths:
         '200':
           description: Transaction retrieved successully
           schema:
-            $ref: '#/definitions/TransactionsApiResponse'
+            $ref: '#/definitions/TransactionsApiResponse' 
         '404':
           description: No Transactions retrieve with this user
         '500':
@@ -328,6 +328,10 @@ definitions:
         type: string
       body:
         type: array
+        xml:
+            wrapped: true
+        items:
+            $ref: '#/definitions/Transaction'
   LoginResponse:
     type: object
     properties:
