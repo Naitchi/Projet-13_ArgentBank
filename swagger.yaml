@@ -319,6 +319,27 @@ definitions:
         type: string
       body:
         type: object
+        properties:
+          id:
+            type: string
+          date:
+            type: date
+          description: 
+            type: string
+          amount:
+            type: number
+          devise:
+            type: string
+          balance: 
+            type: number
+          transactionType:
+            type: string
+          category:
+            type: string
+          notes: 
+            type: string
+          userId:
+            type: string
   TransactionsApiResponse:
     type: object
     properties:
