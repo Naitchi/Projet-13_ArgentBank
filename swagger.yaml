@@ -70,6 +70,7 @@ paths:
           name: Authorization
           description: Attach Bearer JWT token
           required: true
+          type: string
       produces:
         - application/json
       responses:
@@ -93,6 +94,7 @@ paths:
           name: Authorization
           description: Attach Bearer JWT token
           required: true
+          type: string
         - in: body
           name: body
           description: Update user profile attributes
@@ -123,6 +125,7 @@ paths:
           name: Authorization
           description: Attach Bearer JWT token
           required: true
+          type: string
       produces:
         - application/json
       responses:
@@ -147,6 +150,7 @@ paths:
           name: Authorization
           description: Attach Bearer JWT token
           required: true
+          type: string
         - in: body
           name: body
           description: Signup Payload
@@ -177,6 +181,7 @@ paths:
           name: Authorization
           description: Attach Bearer JWT token
           required: true
+          type: string
         - in: body
           name: body
           description: Update Transaction attributes
@@ -187,9 +192,8 @@ paths:
           name: id
           description: ID of transaction to return
           required: true
-          schema:
-            type: integer
-            format: int64
+          type: integer
+          format: int64
       produces:
         - application/json
       responses:
@@ -213,13 +217,13 @@ paths:
           name: Authorization
           description: Attach Bearer JWT token
           required: true
+          type: string
         - in: path
           name: id
           description: ID of transaction to return
           required: true
-          schema:
-            type: integer
-            format: int64
+          type: integer
+          format: int64
       produces:
         - application/json
       responses:
@@ -243,13 +247,13 @@ paths:
           name: Authorization
           description: Attach Bearer JWT token
           required: true
+          type: string
         - in: path
           name: id
           description: ID of transaction to return
           required: true
-          schema:
-            type: integer
-            format: int64
+          type: integer
+          format: int64
       produces:
         - application/json
       responses:
@@ -323,7 +327,7 @@ definitions:
           id:
             type: string
           date:
-            type: date
+            type: string
           description: 
             type: string
           amount:
@@ -371,7 +375,7 @@ definitions:
       id:
         type: string
       date:
-        type: date
+        type: string
       description: 
         type: string
       amount:
